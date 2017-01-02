@@ -1,0 +1,815 @@
+SERIAL NO	TOPIC NAME
+1 Asymptotic notation and time complexity							
+1.1 Definition of Algorithm						
+1.1.1 Problem Solving Procedure					
+1.1.2 Solve well-specified problem					
+1.1.3 Problem Specification description					
+1.1.4 Complete set Instances					
+1.1.5 Output Instance					
+1.1.5.1	Sort				
+1.1.5.2	Input				
+1.1.5.2.1 Sequence n keys			
+1.1.5.3	Output				
+1.1.5.3.1 Permutation input sequence			
+1.1.6 Possible Input Sequence					
+1.1.7 Main Properties					
+1.1.7.1	Finiteness				
+1.1.7.2	Correctness				
+1.1.7.3	Robustness				
+1.2	Algorithm Analysis						
+1.2.1 Time Complexity					
+1.2.1.1	Time amount				
+1.2.1.2	Input size				
+1.2.1.3	Expressed Asymptotic Notation				
+1.2.1.3.1 Big O Notation			
+1.2.1.3.1.1 non negative functions, f(n),g(n)		
+1.2.1.3.1.2 f(n)=O(g(n))		
+1.2.1.3.1.2.1 growth rate	
+1.2.1.3.1.2.2 Smaller f(n)	
+1.2.1.3.1.2.3 Bigger g(n)	
+1.2.1.3.1.2.4 Equal also	
+1.2.1.3.3 0<=f(n)<=a*g(n)		
+1.2.1.3.4 n>=b must		
+1.2.1.3.5 a,b positive		
+1.2.1.3.6 a*g(n) upper bound		
+1.2.1.3.7 Examples		
+1.2.1.3.7.1 log n!=O(nlogn)	
+1.2.1.3.7.2 log n= O(n)	
+1.2.1.3.2 Big Omega notation			
+1.2.1.3.2.1 non negative functions, f(n),g(n)		
+1.2.1.3.2.2 f(n)=Omega(g(n))		
+1.2.1.3.2.3 0<=a*g(n)<=f(n)		
+1.2.1.3.2.4 n>=b must		
+1.2.1.3.2.5 a,b positive		
+1.2.1.3.2.6 a*g(n) lower bound f(n)		
+1.2.1.3.2.7 Examples		
+1.2.1.3.2.7.1 7n^2+n=Omega(n)	
+1.2.1.3.2.7.2 log n!=Omega(nlogn)	
+1.2.1.3.2.8 Gowth rate f(n)>g(n)		
+1.2.1.3.3 Theta Notation			
+1.2.1.3.3.1 non negative functions, f(n),g(n)		
+1.2.1.3.3.2 f(n)=Theta(g(n))		
+1.2.1.3.3.2.1 f(n)=O(g(n))	
+1.2.1.3.3.2.1.1 f(n)<= a1*g(n)
+1.2.1.3.3.2.2 f(n)=Omega(g(n))	
+1.2.1.3.3.2.2.1	f(n)<= a2*g(n)
+1.2.1.3.3.3 a1,a2 constraints		
+1.2.1.3.3.4 f(n)=Theta(g(n))		
+1.2.1.3.3.4.1 a1*g(n) upper bound f(n)	
+1.2.1.3.3.4.2 a2*g(n) lower bound f(n)	
+1.2.1.3.3.4.3 g(n) tight bound f(n)	
+1.2.1.3.3.5 Examples		
+1.2.1.3.3.5.1 "p(n)=10n^450n^3+200n^21000n=Theta(n^4)"	
+1.2.1.3.3.5.2 "3n^2100n+6=Theta(n^2)"	
+1.2.1.3.4 Little o notation			
+1.2.1.3.4.1 f(n)=o(g(n))		
+1.2.1.3.4.2 0<=f(n)		
+1.2.1.3.4.3 n>=b must		
+1.2.1.3.4.4 Growth rate f(n)		
+1.2.1.3.5 Little Omega notation			
+1.2.1.3.5.1 f(n)=w(g(n))		
+1.2.1.3.5.2 0<=a*g(n)		
+1.2.1.3.5.3 n>=b must		
+1.2.1.3.5.4 Growth f(n)>g(n)		
+1.2.2 Space Complexity					
+1.2.2.1 Space amount				
+1.2.2.2	Input Size				
+1.3 Time Complexity Finding						
+1.3.1 No Loop					
+1.3.1.1 No recursion				
+1.3.1.2 Constant time 0(1)				
+1.3.2 Loop					
+1.3.2.1 Loop Running				
+1.3.2.2 n times= O(n)				
+1.3.2.2.1 n input size			
+1.3.2.3 n^2 times=O(n^2)				
+1.3.2.3.1 n input size			
+1.3.3 Complexity Types					
+1.3.3.1 Worst case				
+1.3.3.1.1 function			
+1.3.3.1.2 maximum steps			
+1.3.3.1.3 instance size n			
+1.3.3.1.4 useful			
+1.3.3.2	Best case				
+1.3.3.2.1 function			
+1.3.3.2.2 minimum steps			
+1.3.3.2.3 instance size n			
+1.3.3.3 Average case				
+1.3.3.3.1 function			
+1.3.3.3.2 Average steps			
+1.4 Calculation Time Complexity						
+1.4.1 Substitution Method					
+1.4.1.1	Value Substitution				
+1.4.2 Recursion Tree Method					
+1.4.2.1 Track iterations				
+1.4.2.2 Recurrence Equation				
+1.4.2.3 Expand current items				
+1.4.2.4 Adding current items				
+1.4.2.5 Tree Comutation				
+1.4.2.6 Invokating node each time				
+1.4.2.7 Label each node				
+1.4.2.8 Time cost incurred				
+1.4.2.9 Labelling trees				
+1.4.2.10 Base case cost T(0)				
+1.4.2.11 Cost sum=total running time				
+1.4.3 Variable changes					
+1.4.3.1 Substituted another variable				
+1.4.3.2 Solving known pattern				
+1.4.3.3 Restoration original variable				
+1.4.3.4 Desired results				
+1.4.4 Master Theorem					
+1.4.4.1 solving recurrence relation				
+2 Recursion							
+2.1 Definition of Recursion						
+2.1.1 Breaking down problem					
+2.1.2 Subproblems one/more					
+2.1.3 calls itself					
+2.1.4 Recursion cases					
+2.1.4.1 Base case				
+2.1.4.1.1 Terminating condition			
+2.1.4.2 Recursive Case				
+2.1.4.2.1 Breaks original pattern			
+2.1.5 General Approach					
+2.1.5.1 write function header				
+2.1.5.2 Decompose problems into subproblems				
+2.1.5.3 Write base case				
+2.1.5.4 Write termination condition				
+2.1.6 Write recursive program					
+2.1.6.1 At least one base case				
+2.1.6.2 Atleast one recursive case				
+2.1.6.3 Test for one base case				
+2.1.6.4 Executable before recursive call				
+2.1.6.5 Recursive call must				
+2.1.6.6 Correct non recursive part				
+2.2 Types of Recursion						
+2.2.1 Direct Recursion					
+2.2.1.1 Explicitly calling itself				
+2.2.2 Indirect Recursion					
+2.2.2.1 Calls another function				
+2.2.2.2 Another function calls f(x)				
+2.2.3 Tail Recursion					
+2.2.3.1 No pending operations				
+2.2.3.2 Independent number recursive calls				
+2.2.3.3 Interactive process				
+2.2.4 Non Tail Recursion					
+2.2.4.1 Pending operations exist				
+2.2.4.2 Not independent				
+2.2.5 Linear Recursion					
+2.2.5.1 No pending operations				
+2.2.5.2 Example				
+2.2.5.2.1 Factorial Functions			
+2.2.6 Tree Recursion					
+2.2.6.1 Non linear				
+2.2.6.2 Pending operations exist				
+2.2.6.3 Example				
+2.2.6.3.1 Fibonacci Functions			
+2.3 "Converting Recursive function>Tail Recursive"						
+2.3.1 Auxillary parameter					
+2.3.1.1 Form result				
+2.3.2 Incorporate pending operation					
+2.3.3 Recursive Function					
+2.3.3.1 No pending operation				
+2.3.4 Clean Syntax					
+2.3.5 Hide auxillary Parameters					
+2.3.6 Example					
+2.3.6.1 Fibonacci function				
+2.3.6.1.1 Two auxillary parameters			
+2.4 Converting Tail Recursive>Iterative					
+2.4.1 Establish base case				
+2.4.2 Truth value P(x) parameter				
+2.4.3 Example				
+2.4.3.1 Factorial			
+2.4.3.1.1 Factaux X		
+2.4.3.1.2 Composition x		
+2.4.3.1.2.1 Parameter n	
+2.4.3.1.2.2 Parameter result	
+2.4.3.1.3 P(n,result)=(n==1)		
+2.4.3.1.4 G(n,result)=result		
+2.4.3.1.5 H(n,result)=(n1,n*result)		
+2.4.3.1.6 P(x) true = F(x)		
+2.4.3.1.6.1 F(x)=G(x)	
+2.4.3.1.6.2 F(x)=H(x)	
+2.5 Recursion vs Iteration						
+2.5.1 System Stack					
+2.5.2 PUSH and POP operations					
+2.5.3 Advantages Recursive function					
+2.5.3.1 Code looks beautiful				
+2.5.3.2 Simpler writing				
+2.5.4 Disadvantages Recursive function					
+2.5.4.1 Incur Extra Overhead				
+2.5.4.2 Degraded Performance				
+2.5.4.3 Slower				
+2.5.4.4 Use extra memory				
+2.6 Working Recursion						
+2.6.1 2 sperate memory area					
+2.6.1.1 Heap area				
+2.6.1.2 Stack area				
+2.6.1.2.1 Creates stack frame			
+2.6.1.2.2 Also called activation record			
+2.6.1.2.3 Contain parameters			
+2.6.1.2.4 Contain local variables			
+2.6.1.2.5 Main function called			
+2.6.1.2.5.1 Start program		
+2.6.1.2.5.2 stack bottom		
+2.6.1.2.5.3 function currently executing		
+2.6.1.2.5.3.1 top of stack	
+2.6.1.2.5.4 Other stack frames		
+2.6.1.2.5.4.1 Wait for returning fuctions	
+2.6.1.2.5.4.2 Continue executing	
+2.6.1.2.5.5 function finishes		
+2.6.1.2.5.5.1 Stack frame erased	
+2.6.1.2.5.5.2 Local variable erased	
+2.6.1.2.5.6 Recursive functions		
+2.6.1.2.5.6.1 Holds 2 or more stack frames	
+2.6.1.2.5.6.2 top one accessed	
+2.6.1.2.5.6.3 New stack frame pushed	
+2.6.1.2.5.6.3.1 With each recursive call
+2.6.1.2.5.6.4 Stack frame popped	
+2.6.1.2.5.6.5 return value if any	
+2.6.1.2.5.6.5.1 at stack top
+2.6.2 Binary Search					
+2.6.2.1 Searchiing elements x				
+2.6.2.2 Sorted array a[]				
+2.6.2.3 index i				
+2.6.2.4 a[i]=x or non existent				
+2.6.2.5 Procedure				
+2.6.2.5.1 a[low]<=x<=a[high]			
+2.6.2.5.2 mid=(high+low)/2			
+2.6.2.5.3 if x=a[mid]			
+2.6.2.5.3.1 return mid		
+2.6.2.5.4 if x >=a[mid]			
+2.6.2.5.4.1 Search range (mid+1) > high		
+2.6.2.5.5 if x < a[mid]			
+2.6.2.5.5.1 Search range low >(mid1)		
+2.6.2.5.6 Complexity			
+2.6.2.5.6.1 O(log n)		
+2.6.2.5.6.2 Unsorted array		
+2.7 Tower of Hanoi					
+2.7.1 Puzzle				
+2.7.2 Three pegs				
+2.7.3 Several disks				
+2.7.4 Initially stacked				
+2.7.5 Largest to smallest				
+2.7.6 Left peg				
+2.7.7 Rules				
+2.7.7.1 move entire tower >middle peg			
+2.7.7.2 One disk only			
+2.7.7.3 Smaller disk on top must			
+2.7.8 Recurse largest disk				
+2.7.9 One peg moved(source)				
+2.7.10 Another peg moved(destination)				
+2.7.11 Third peg moved(spare)				
+2.7.12 Complexity				
+2.7.12.1 O(2^n)			
+2.7.12.2 Exponential time complexity			
+2.7.12.3 Computationally expensive			
+2.7.12.4 Hard writing iteratively			
+3 Heap or priority queue							
+3.1 Definition						
+3.1.1 Data structure					
+3.1.2 Supports two basic operations					
+3.1.2.1 Insert new item				
+3.1.2.2 Remove minimum or maximum item				
+3.1.3 Binary Heap					
+3.1.3.1 Classic method				
+3.1.3.2 Implement priority queue				
+3.1.4 Properties Heap					
+3.1.4.1 Structure property				
+3.1.4.1.1 Complete binary tree			
+3.1.4.1.2 Represented as array			
+3.1.4.1.3 Completely filled up			
+3.1.4.1.4 "Possible exception >bottom most level"			
+3.1.4.1.4.1 "Filled from left >right"		
+3.1.4.2 Ordering property				
+3.1.4.2.1 Every node denoted X			
+3.1.4.2.2 Parent p			
+3.1.4.2.3 key p<=X			
+3.1.4.2.4 Minimum element = root(must)			
+3.1.4.2.4.1 minheap		
+3.1.4.2.5 Maximum element = root(must)			
+3.1.4.2.5.1 maxheap		
+3.2 Representation						
+3.2.1 Represented array A					
+3.2.2 Attributes A					
+3.2.2.1 Length=array size				
+3.2.2.2 Heap size=number of elements				
+3.2.2.3 Length>=heapsize				
+3.2.2.4 Heap root=A(1)				
+3.2.2.5 Parent(i)=A(1/2)				
+3.2.2.6 Left child(i)=A(2i)				
+3.2.2.7 Right child(i)=A(2i+1)				
+3.2.2.8 if i=1				
+3.2.2.8.1 no parent			
+3.2.2.9 if 2i>n				
+3.2.2.9.1 Left child doesn't exist			
+3.2.2.10 if 2i+1>n				
+3.2.2.10.1 Right child doesn't exist			
+3.3 Basic operations						
+3.3.1 Heapify					
+3.3.1.1 Array A[]				
+3.3.1.2 heapsize n				
+3.3.1.3 make i				
+3.3.1.3.1 "i >subtree root"			
+3.3.2 Build Heap					
+3.3.2.1 create heap				
+3.3.2.1.1 unordered input array			
+3.3.2.2	start from trees				
+3.3.3 Heap Sort					
+3.3.3.1 sorts array				
+3.3.4 Extract					
+3.3.4.1 root				
+3.3.4.2	max heap				
+3.3.4.3	min heap				
+3.3.5 Insert					
+3.3.5.1 create hole				
+3.3.5.2	new element x placed				
+3.3.5.3	no violation heap property				
+3.3.5.4	percolate up method				
+3.3.5.4.1 bubble up hole			
+3.3.5.4.2 towards root			
+3.3.5.4.3 sliding element			
+3.3.5.4.4 hole's parent down			
+3.3.5.4.5 continue till X in hole			
+3.3.6 Extracting maximum					
+3.3.6.1 Max element from Max Heap				
+3.3.6.2	Extract root				
+3.4 Analysis of Heap Operations						
+3.4.1 Heapify Complexity					
+3.4.1.1 O(h)=O(log2 n)				
+3.4.2 Insert Complexity					
+3.4.2.1 O(h)=(log n)				
+3.4.2.2	Time complexity depends on height				
+3.4.3 Delete or Extract Maximum Complexity					
+3.4.3.1 O(log2 n)				
+3.4.4 Analysis of Build Heap					
+3.4.4.1 O(nlogn)				
+3.4.4.2	Can get tight result				
+3.4.4.2.1 Linear in time			
+3.4.4.2.2 O(n)			
+3.5 Heap Sort						
+3.5.1 Priority Queue					
+3.5.1.1 Sort n items				
+3.5.1.2	Inserting every item				
+3.5.1.2.1 Binary tree			
+3.5.1.3	Extracting item				
+3.5.1.4	Calling Algorithm				
+3.5.1.4.1 Delete max			
+3.5.1.4.2 Delete min			
+3.5.1.5	Using Heap				
+3.5.1.5.1 Max Heap			
+3.5.1.5.2 Min Heap			
+3.5.1.5.3 n times			
+3.5.1.6	Heapsort				
+3.5.1.6.1 Loop			
+3.5.1.6.1.1 Swap()		
+3.5.1.6.1.2 Heapify		
+3.5.1.6.2 O(n log n)			
+3.5.2 Implementation Issues					
+3.5.2.1 List				
+3.5.2.1.1 Expensive to search			
+3.5.2.2	Sorted list				
+3.5.2.2.1 Expensive			
+3.5.2.2.1.1 Add		
+3.5.2.2.1.2 Remove		
+3.5.2.3	Binary Search Tree				
+3.5.2.3.1 Trees			
+3.5.2.3.1.1 Could be unbalanced		
+3.5.2.3.1.2 Unrandom input		
+4 Graph Traversal							
+4.1 Definition						
+4.1.1 Starts					
+4.1.1.1 Arbitary vertex				
+4.1.2 Visits					
+4.1.2.1 All vertex				
+4.1.3 Two Types					
+4.1.3.1 Depth First Search				
+4.1.3.2	Breadth First Search				
+4.2 Depth First Search						
+4.2.1 Start from vertex u					
+4.2.2 u as visited					
+4.2.3 Add to R					
+4.2.4 Each Edge(uv)					
+4.2.4.1 Incident to u				
+4.2.5 v not visited					
+4.2.5.1 Return R				
+4.2.5.2	DFS(v)				
+4.2.6 Edge Classification					
+4.2.6.1 Tree Edge				
+4.2.6.2 Back Edge				
+4.2.6.3	Forward Edge				
+4.2.6.4	Cross Edge				
+4.2.7 Time Stamps					
+4.2.7.1 Discovery time				
+4.2.7.1.1 See Vertex			
+4.2.7.1.2 First time			
+4.2.7.2	Finish Time				
+4.2.7.2.1 See Vertex			
+4.2.7.2.2 Last time			
+4.2.8 Application of DFS					
+4.2.8.1 Topological ordering				
+4.2.8.1.1 Select vertex			
+4.2.8.1.1.1 degree 0		
+4.2.8.1.2 Add vertex to Output list P			
+4.2.8.1.3 Delete			
+4.2.8.1.3.1 Vertex		
+4.2.8.1.3.2 All Edges		
+4.2.8.1.4 Return			
+4.2.8.2	Strongly Connected Components				
+4.2.8.2.1 Call DFS			
+4.2.8.2.2 Compute finishing time			
+4.2.8.2.3 Compute Transpose			
+4.2.8.2.4 Perform DFS			
+4.2.8.2.5 Output			
+4.2.8.3	DFS Cycle				
+4.2.8.3.1 Back Edge			
+4.2.8.3.1.1 Has cycle		
+4.2.8.4	Finding articulation point				
+4.2.8.4.1 Start any vertex			
+4.2.8.4.2 Perform DFS			
+4.2.8.4.3 Number visited vertices			
+4.2.8.4.4 Define low(v)=Minimum			
+4.2.8.4.5 Articulation Point			
+4.2.8.4.5.1 Root		
+4.2.8.4.5.1.1 More than one child	
+4.2.8.4.5.2 Node		
+4.2.8.4.5.2.1 Some child	
+4.2.8.4.5.2.2 low>=Num(v)	
+4.3 Breadth First Search(BFS)						
+4.3.1 Enqueue starting vertex					
+4.3.2 Queue not empty					
+4.3.3 Dequeue a vertex					
+4.3.4 Visit v					
+4.3.5 Enqueue					
+4.3.6 Performance					
+4.3.6.1 O(V^2)				
+4.3.7 Edge Classifiation					
+4.3.7.1 Undirected Graph				
+4.3.7.1.1 Tree Edges			
+4.3.7.1.2 Cross Edge			
+4.3.7.2	Directed Graph				
+4.3.7.2.1 Tree Edge			
+4.3.7.2.2 Cross Edge			
+4.3.7.2.3 Back Edge			
+4.3.7.2.4 No forward Edge			
+4.3.8 Application					
+4.3.8.1 Graph cycle or not				
+4.3.8.2	Determine joining path				
+4.3.8.3	Graph connected or not				
+5 Divide and Conquer							
+5.1 Divide						
+5.1.1 Breaking problem					
+5.2 Conquer						
+5.2.1 Solving problems					
+5.3 Combine						
+5.3.1 Collecting subproblems					
+5.4 Time Complexity						
+5.4.1 O(log n)					
+5.5 Linear Search						
+5.5.1 O(n)					
+5.6 Binary Search						
+5.6.1 O(log n)					
+5.7 Multiplication of two integers						
+5.7.1 O(n^2)					
+5.8 Finding max and min						
+5.8.1 O(log n)					
+5.9 Quick Sort						
+5.9.1 Divide					
+5.9.1.1 Array S				
+5.9.1.2	x as pivot				
+5.9.1.3	Break S				
+5.9.1.3.1 L holds element < x			
+5.9.1.3.2 E holds element = x			
+5.9.1.3.3 G holds element > x			
+5.9.2 Conquer					
+5.9.2.1 Recursively Sort				
+5.9.2.1.1 L			
+5.9.2.1.2 G			
+5.9.3 Combine					
+5.9.3.1 Put elements in S				
+5.9.3.1.1 Put L			
+5.9.3.1.2 Put G			
+5.9.3.1.3 Put E			
+5.9.4 Other choice of pivot				
+5.9.4.1	Random			
+5.9.4.2	Median of three			
+5.9.5 Time Complexity				
+5.9.5.1	Worst Case			
+5.9.5.1.1 O(n^2)		
+5.9.5.2	Best Case			
+5.9.5.2.1 O(n log n)		
+5.9.5.3	Average Case			
+5.9.5.3.1 O(n logn)		
+5.10.0 Merge Sort						
+5.10.1 Two step					
+5.10.1.1 Divide array				
+5.10.1.2 Merge two sorted array				
+5.10.1.3 Make a single sorted array				
+5.10.2 Time complexity						
+5.10.2.1 O(n log n)				
+5.11 Strassen's Matrix Multiplication						
+5.11.1 2*2 multiplication					
+5.11.2 7 multiplication					
+5.11.3 18 add and substract					
+5.11.4 Time Complexity					
+5.11.4.1 0(n^2.807)				
+6 Union Find Algorithm							
+6.1 Basic Operations						
+6.1.1 Makeset					
+6.1.1.1	New Set				
+6.1.2 Union					
+6.1.2.1	Merge two sets into one				
+6.1.3 Time complexity					
+6.1.3.1	O(n)				
+6.2 Union by height						
+6.2.1 O(log n)					
+6.3 Path Compression						
+6.4 Union By Weight						
+6.4.1 O(log n)					
+6.5 Application of Union						
+6.5.1 Finding Minimum Spanning Tree					
+6.5.2 Finding connected components					
+7 Greedy Algorithm							
+7.1 Definition						
+7.1.1 Solve Optimization Problem					
+7.2 Two properties						
+7.2.1 Greedy Choice					
+7.2.2 Optimal Substructure					
+7.3 Use Greedy Method						
+7.3.1 Problem assigned numerically					
+7.3.2 Global optimum					
+7.3.3 Incremental solution					
+7.3.4 Intermmediate step					
+7.4 Disadvantage						
+7.4.1 Slow					
+7.4.2 Algorithm must be correct					
+7.5 Minimum Spanning Tree						
+7.5.1 Kruskal Algorithm					
+7.5.1.1 Connected Graph				
+7.5.1.2	Sort edges(e)				
+7.5.1.3	Minimum weight edge				
+7.5.1.4	No cycle				
+7.5.1.5	Time Complexity				
+7.5.1.5.1 0(eloge)			
+7.5.2 Prim's Algorithm					
+7.5.2.1 Single vertex				
+7.5.2.2	Fewer n vertices				
+7.5.2.3	Find smallest edge				
+7.5.2.4	Add edge				
+7.5.2.5	Time Complexity				
+7.5.2.5.1 0(ne)			
+7.6 Dijkstra Algorithm						
+7.6.1 Single SHortest Path					
+7.6.2 Worst Case O(n^2)					
+7.6.3 Pitfalls					
+7.6.3.1	Negative Edge Weight				
+7.7 Knapsack Problem						
+7.7.1 Combinatorial Optimization					
+7.7.2 Kinds of Knapsack					
+7.7.2.1 "01 Knapsack"				
+7.7.2.1.1 May not be broken			
+7.7.2.1.2 Decide take an item			
+7.7.2.1.3 Decide to leave an item			
+7.7.2.1.4 Not be efficiently solved			
+7.7.2.2	Fractional Knapsack				
+7.7.2.2.1 Fractions of items			
+7.7.2.2.2 Items can broken			
+7.7.2.2.3 Easy solve			
+7.7.2.3	Time complexity				
+7.7.2.3.1 O(n log n)			
+7.8 Job Sequencing with Deadline						
+7.8.1 N jobs processed					
+7.8.2 One machine is available					
+7.8.3 Feasible solution					
+7.8.4 Subset of jobs					
+7.8.5 Completed within deadline					
+7.8.6 Optimal Solution					
+7.8.7 Feasible Solution					
+7.8.8 Maximum Profit value					
+7.8.9 Time Complexity					
+7.8.9.1	O(n^2)				
+7.9 Activity Selection						
+7.9.1 Sort By finish					
+7.9.2 Pick first activity					
+7.9.3 Remove all activities					
+7.9.4 Recursively solve problem					
+7.9.5 Time Complexity					
+7.9.5.1 0(n log n)				
+7.10.0 Travelling Salesman Problem						
+7.10.1 Choose start node					
+7.10.2 Consider the arcs					
+7.10.3 arcs join node					
+7.10.4 Pick minimum weight					
+7.10.5 Add to cycle					
+7.10.6 Go on until all nodes choses					
+7.10.7 Add the arc					
+7.10.8 Time Complexity					
+7.10.8.1 O(n^2*2^n)				
+7.11 Huffman Encoding						
+7.11.1 Prefix Code					
+7.11.2 Optimal prefix free					
+7.11.3 Take the characters					
+7.11.4 Sort increasing frequency					
+7.11.5 Vertices of trees					
+7.11.6 Take first two vertices					
+7.11.7 Insert the new vertex					
+7.11.8 Read Huffman Code					
+8 Dynamic Programming (DP)							
+8.1 Concept of DP						
+8.1.1 Dynmaic					
+8.1.1.1 Continuous change				
+8.1.2 Programming					
+8.1.2.1 Instructional Sequence				
+8.2 Features of DP						
+8.2.1 Optimization Problem					
+8.2.2 Implemented Two Ways					
+8.2.2.1 Searching all possibilities				
+8.2.2.2	Store results				
+8.2.3 Bottom up approach					
+8.2.4 Broken into subproblem					
+8.2.5 Implementing Recursive Problem					
+8.3 Steps of DP						
+8.3.1 Division of problems					
+8.3.2 Creating table form					
+8.3.3 Follow principle of Optimality					
+8.3.4 Combining solution					
+8.4 Implementation						
+8.4.1 Chain matrix multiplication					
+8.4.2 All pair shortest path					
+8.4.3 Single Source shortest path					
+8.4.4 0-1 Knapsack Problem					
+8.4.5 Travelling Salesman Problem					
+8.4.6 Minimum Weight Triangulation					
+8.4.7 Optimal binary Search Tree					
+8.5 Matrix Chain Multiplication						
+8.5.1 Features					
+8.5.1.1 Associative in nature				
+8.5.1.2	Scalar				
+8.5.1.3	Usage				
+8.5.1.3.1 Compiler Design			
+8.5.1.3.2 Creation of database code			
+8.5.1.3.3 Query Optimization			
+8.5.1.4	Carried on					
+8.5.1.4.1 Square matrix				
+8.5.1.4.1.1 dimenssions must be equal			
+8.5.1.4.2 Non square matrix				
+8.5.1.4.2.1 dimensions must be equal			
+8.5.1.4.2.2 No of columns = No of rows			
+8.5.1.4.2.3 Cost Effective			
+8.5.1.4.3 Algorithm					
+8.5.1.4.3.1 Loop initialization				
+8.5.1.4.3.2 Length of subproblem				
+8.5.1.4.3.3 Splitting matrices into subinstances				
+8.5.1.4.3.4 Time complexity				
+8.5.1.4.3.4.1 O(n^3)			
+8.6 All pair shortest path						
+8.6.1 Adjacency list					
+8.6.2 Cost Square Matrix					
+8.6.3 Instance of minimum cost path					
+8.6.4 Example					
+8.6.4.1 Floyd Warshall Problem				
+8.6.4.1.1 Loop Initialization			
+8.6.4.1.2 Loop for intermmediate vertices			
+8.6.4.1.3 Return Matrix			
+8.6.4.1.4 Time Complexity			
+8.6.4.1.4.1 O(n^3)		
+8.7 Single Source Shortest Path						
+8.7.1 Two ways					
+8.7.1.1 Dijkstra's Algorithm				
+8.7.1.1.1 Positive Weights			
+8.7.1.2	Bellman Ford Algorithm				
+8.7.1.2.1 May be negative weights			
+8.7.1.2.2 Algorithm			
+8.7.1.2.2.1 Loop initialization		
+8.7.1.2.2.2 Loop 1, Relaxation		
+8.7.1.2.2.3 Loop 2, Relaxation		
+8.7.1.2.2.4 Checking negative weight edge cycle		
+8.7.1.2.2.5 No negatiive weight cycle		
+8.7.1.2.2.6 Time Complexity		
+8.7.1.2.2.6.1 O(|V||E)	
+9 Lower Bound Theory							
+9.1 Definition						
+9.1.1 No algorithm>L(n)					
+9.2 Trivial Lower Bound						
+9.2.1 Count data to be read					
+9.2.2 Data to be produced as output					
+9.3 Finding Lower Round						
+9.3.1 Decision tree model					
+9.3.2 Adversary method					
+9.3.2.1 Maximize key comparisons				
+10 Computational Complexity							
+10.1 Introduction						
+10.1.1 P					
+10.1.1.1 Set of decision problems				
+10.1.1.2 Solved by deterministic algorithm				
+10.1.2 NP					
+10.1.2.1 Nondeterministic Polynomial				
+10.1.2.2 Verifiable in polynomial amount of time				
+10.1.3 NPComplete					
+10.1.4 NPHard					
+10.2 Terminologies of Algorithm						
+10.2.1 Decision Algorithm					
+10.2.1.1 Answer yes or no				
+10.2.1.2 Example				
+10.2.1.2.1 Linear Search			
+10.2.1.2.2 Binary Search			
+10.2.2 Optimization Algorithm					
+10.2.2.1 Optimum value				
+10.2.2.2 Example				
+10.2.2.2.1 Prim's Algorithm			
+10.2.2.2.2 Krushkal's Algorithm			
+10.2.3 Polynomial Complexity Algorithm					
+10.2.3.1 Worst case time complexity is polynomial				
+10.2.3.2 WRT to input size				
+10.2.3.3 O(n^k)				
+10.2.3.4 K is independent of n				
+10.2.3.5 Example				
+10.2.3.5.1 Quick Sort			
+10.2.4 Exponential Complexity Algorithm					
+10.2.4.1 If input increases a small amount				
+10.2.4.2 Time complexity increse huge amount				
+10.2.4.3 O(n^r)				
+10.2.4.4 n is input size				
+10.2.5 Deterministic Algorithm					
+10.2.5.1 Given input >Same output				
+10.2.5.2 Example				
+10.2.5.2.1 Linear Search			
+10.2.6 Nondeterministic Algorithm					
+10.2.6.1 Loop is guessing stage				
+10.2.6.2 Next stage is verification stage				
+10.2.6.3 Example				
+10.2.6.3.1 Hamiltonian Cycle			
+10.2.6.3.2 KClique			
+10.2.6.3.3 Vertex Cover Problem			
+10.2.6.3.4 Satisfiablity Problem			
+10.3 Problems and instances						
+10.3.1 Infinite collection of inputs					
+10.3.2 Input(I) is an instance					
+10.3.3 Size of instance =no of bits					
+10.3.4 Solution(I) is a set of feasible solutions					
+10.3.5 Solution has associated value					
+10.4 Problem Reduction						
+10.4.1 Cost of solving(x)=Cost of Solving(Y)+Cost of reductions					
+10.4.2 Example					
+10.4.2.1 Linear time reduction				
+10.4.2.2 Linear equivalence of problems				
+10.4.2.3 Polynomial Time Reduction				
+11 Approximation Algorithm							
+11.1 Introduction						
+11.1.1 Heuristics					
+11.1.1.1 Polynomial time for small instance				
+11.1.1.2 Not feasible >Problem size large				
+11.1.2 Average Case Analysis					
+11.1.2.1 Expected perforamce over some specified distribution				
+11.1.3 General Optimization problem					
+11.1.3.1 Use branch and bound				
+11.1.3.2 Use Genetic Algorithms				
+11.1.3.3 Use Neural nets				
+11.1.4 Approximation Algorithm					
+11.1.4.1 Find Polynomial Time approximation				
+11.1.4.2 Fast				
+11.1.4.3 Not produce optimal sol				
+11.2 Performance of Approximation Algorithm						
+11.2.1 Returns a legal solution					
+11.2.2 Not cost optimal					
+11.3 Two types of Approximation						
+11.3.1 Absolute Approximations					
+11.3.1.1 Minimization Problem				
+11.3.2 Relative Approximations					
+11.4 Approximation Algorithm for Vertex Cover						
+11.4.1 Time Complexity					
+11.4.1.1 0(E)				
+11.4.1.2 E is edge				
+11.4.2	Algorithm Steps					
+11.4.2.1 Find maximal Matching				
+11.4.2.2 Return set of end points of all edges				
+12 BackTracking							
+12.1 Basic Idea						
+12.1.1	Solve problems which has a sequence of objects					
+12.1.2	Sequence satisfies some criterion					
+12.1.3	Modified depth first search tree					
+12.1.4	Involves tree search					
+12.1.5	Each node is promising					
+12.2 Algorithm						
+12.2.1	Explore Node N					
+12.2.1.1 If N=goal node				
+12.2.1.1.1	Success			
+12.2.1.2 If N=leaf node				
+12.2.1.2.1 Failure			
+12.2.1.3 For each child C of N				
+12.2.1.3.1	Explore C			
+12.2.1.4 If C = Successful				
+12.2.1.4.1 Return Failure			
+12.3 Nqueens						
+12.3.1	No two queens can attack each other					
+12.4 Graph Kcoloring						
+12.4.1	Assigning colors to the vertices of undirected graph					
+12.4.2	No two adjacent vertices are assigned same color					
+12.4.3	Time Complexity					
+12.4.3.1 O(k^n)				
+12.5 Hamiltonian Cycle						
+12.5.1 Cycle that passes through every vertex only once					
+12.6 Branch and Bound						
+12.6.1 State space tree to solve the problem					
+12.6.2 Much Slower
+12.6.3 3
+12.6.3 5
